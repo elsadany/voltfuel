@@ -1,0 +1,318 @@
+<html>
+<head>
+	<script>
+		window.onload = function() {
+			var d = new Date().getTime();
+			document.getElementById("tid").value = d;
+		};
+	</script>
+</head>
+<body>
+	<form method="POST" name="customerData" action="ccavRequestHandler.php">
+		<table width="40%" height="100" border='1' align="center"><caption><font size="4" color="blue"><b>Integration Kit</b></font></caption></table>
+		<table width="50%" height="100" border='1' align="center">
+			<tr>
+				<td>Parameter Name:</td>
+				<td>Parameter Value:</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					Compulsory information
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Merchant Id
+				</td>
+				<td>
+					<input type="text" name="merchant_id" id="merchant_id" value="" class="cardDetails">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Access Code
+				</td>
+				<td>
+					<input type="text" name="access_code" id="access_code" value="">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Order Id
+				</td>
+				<td>
+					<input type="text" id="order_id" name="order_id" value="43616383" class="cardDetails">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Transaction unique Id
+				</td>
+				<td>
+					<input type="text" name="tid" id="tid" value="">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Instant Gratification
+				</td>
+				<td>
+					<input type="text" name="instant_gratification">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Save Card:
+				</td>
+				<td>
+					<select name="saveCard">
+						<option value="">Select Type</option>
+						<option value="Y">Yes</option>
+						<option value="N">No</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Customer Id
+				</td>
+				<td>
+					<input type="text" name="customer_identifier">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Customer cardId
+				</td>
+				<td>
+					<input type="text" name="customer_card_id">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Amount
+				</td>
+				<td>
+					<input type="text" name="amount" id="amount" value="1" class="cardDetails">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Currency
+				</td>
+				<td>
+					<input type="text" name="currency" id="currency" value="OMR">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Redirect URL
+				</td>
+				<td>
+					<input type="text" name="redirect_url" value="http://localhost/PHP_KIT_Muscat/CUSTOM_CHECKOUT_FORM_KIT/ccavResponseHandler.php">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Cancel URL
+				</td>
+				<td>
+					<input type="text" name="cancel_url" value="http://localhost/PHP_KIT_Muscat/CUSTOM_CHECKOUT_FORM_KIT/ccavResponseHandler.php">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Merchant Parameter1:
+				</td>
+				<td>
+					<input type="text" name="merchant_param1" value="Mobile 1111111111">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Merchant Parameter2:
+				</td>
+				<td>
+					<input type="text" name="merchant_param2" value="Flight from :Dehli">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Merchant Parameter3:
+				</td>
+				<td>
+					<input type="text" name="merchant_param3" value="To:Mumbai">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Merchant Parameter4:
+				</td>
+				<td>
+					<input type="text" name="merchant_param4" value="Mobile No:9595226054">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Merchant Parameter5:
+				</td>
+				<td>
+					<input type="text" name="merchant_param5" value="Mobile No:9595226054">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Card Number:
+				</td>
+				<td>
+					<input type="text" name="card_number" value="">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Expiry Month:
+				</td>
+				<td>
+					<input type="text" name="expiry_month" value="">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Expiry Year:
+				</td>
+				<td>
+					<input type="text" name="expiry_year" value="">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					CVV Number:
+				</td>
+				<td>
+					<input type="text" name="cvv_number" value="">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					SI Parameters:
+				</td>
+				<td>
+
+				</td>
+			</tr>
+			<tr>
+				<td>
+					SI Type:
+				</td>
+            <!-- <td>
+             <input type="text" name="si_type" value="ONDEMAND" readonly="readonly"/>
+         </td> -->
+         <td>
+         	<select name="si_type">
+         		<option value="">select SI Type</option>
+         		<!-- <option value="FIXED">Fixed</option> -->
+         		<option value="ONDEMAND">On Demand</option>
+         	</select>
+         </td>
+     </tr>
+     <tr>
+     	<td>
+     		SI Merchant Ref No:
+     	</td>
+     	<td>
+     		<input type="text" name="si_mer_ref_no" value="">  <!-- value="124345" -->
+     	</td>
+     </tr>
+
+     <tr>
+     	<td>
+     		SI Amount:
+     	</td>
+     	<td>
+     		<input type="text" name="si_amount" value="">  <!-- value="1" -->
+     	</td>
+     </tr>
+     <tr>
+     	<td>
+     		Integration Type
+     	</td>
+     	<td>
+     		<input type="text" name="integration_type" value="">
+     	</td>
+     </tr>
+     <tr>
+     	<td colspan="2">
+     		Billing information(optional):
+     	</td>
+     </tr>
+     <tr>
+     	<td>
+     		Billing Name
+     	</td>
+     	<td>
+     		<input type="text" name="billing_name" value="Test">
+     	</td>
+     </tr>
+     <tr>
+     	<td>
+     		Billing Address:
+     	</td>
+     	<td>
+     		<input type="text" name="billing_address" value="Room no 1101, near Railway station Ambad">
+     	</td>
+     </tr>
+     <tr>
+     	<td>
+     		Billing City:
+     	</td>
+     	<td>
+     		<input type="text" name="billing_city" value="Indore">
+     	</td>
+     </tr>
+     <tr>
+     	<td>
+     		Billing State:
+     	</td>
+     	<td>
+     		<input type="text" name="billing_state" value="MP">
+     	</td>
+     </tr>
+     <tr>
+     	<td>
+     		Billing Zip:
+     	</td>
+     	<td>
+     		<input type="text" name="billing_zip" value="425001">
+     	</td>
+     </tr>
+     <tr>
+     	<td>
+     		Billing Country:
+     	</td>
+     	<td>
+     		<input type="text" name="billing_country" value="India">
+     	</td>
+     </tr>
+     <tr>
+     	<td>
+     		Billing Tel:
+     	</td>
+     	<td>
+     		<input type="text" name="billing_tel" value="9595226054">
+     	</td>
+     </tr>
+     <tr>
+     	<td>
+     		Billing Email:
+     	</td>
+     	<td>
+     		<input type="text" name="billing_email" value="chandrakant.patil@avenues.info">
+     	</td>
+     </tr>
+     <tr>
+     	<td></td><td><input type="submit" value="Make Payment"></td>
+     </tr>
+ </table>
+</form>
+</body>
+</html>
